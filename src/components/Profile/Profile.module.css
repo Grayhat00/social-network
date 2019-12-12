@@ -1,0 +1,8 @@
+.profile {
+  grid-area: c;
+  background-color: red;
+}
+
+.profImg {
+  width: 800px;
+}
