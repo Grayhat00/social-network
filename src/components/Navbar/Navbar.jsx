@@ -36,7 +36,7 @@ const Navbar = (props) => {
       </div>
 
       <div className={s.Friends}>
-        <NavLink className= {s.FriendsItem} to="/friendsItem"> {friendElements} </NavLink>  
+        <NavLink className= {s.FriendsItem} to="/friendsItem"> {friendElements} </NavLink>
       </div>
     </nav>
   )
