@@ -19,19 +19,20 @@ const Message = (props) => {
 }
 
 const Dialogs = (props) => {
-    // debugger;
-    let dialogsElements = props.state.dialogs.map( d => <DialogItem name = {d.name} id={d.id} /> );   
+    let state = props.store.getState().dialogsPage;
 
-    let messagesElements = props.state.messages.map( m => <Message message = {m.message} /> );
+    let dialogsElements = state.dialogs.map( d => <DialogItem name = {d.name} id={d.id} /> );
 
-    let newMessageElement = React.createRef();
+    let messagesElements = state.messages.map( m => <Message message = {m.message} /> );
+
+    let newMessageBody = state.newMessagesBody;
 
     let addMessage = () => {
-        props.dispatch(sendMessageCreator())
+        props.store.dispatch(sendMessageCreator())
     }
-    let onMessageChange = () => {
-        let body = newMessageElement.current.value;
-        props.dispatch(updateNewMessageBodyCreator(body))
+    let onMessageChange = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(updateNewMessageBodyCreator(body))
     }
     return (
         <div className={s.dialogs}>
@@ -40,7 +41,9 @@ const Dialogs = (props) => {
             </div>
             <div className={s.addMessage}>
                {messagesElements}
-               <div> <textarea placeholder="Enter your message" onChange={onMessageChange} ref= {newMessageElement} ></textarea></div>
+               <div> <textarea value={newMessageBody}
+                               onChange={onMessageChange}
+                               placeholder="Enter your message"></textarea></div>
                <div><button onClick={addMessage}>send</button></div>
 
             </div>
