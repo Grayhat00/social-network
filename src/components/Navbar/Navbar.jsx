@@ -17,6 +17,7 @@ import Friends from './Friends/Friends';
 const Navbar = (props) => {
 
   let friendElements = props.state.friends.map (f => <Friends name= {f.name} />);
+
   return (
     <nav className={s.nav}>
       <div className={s.item}>

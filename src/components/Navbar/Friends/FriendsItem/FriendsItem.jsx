@@ -4,9 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 
 const FriendsItem = (props) => {
-    let friendElements = props.state.map (f => <Friends message= {f.name} />);
+    // let friendElements = props.state.map (f => <Friends message= {f.name} />);
   return (
-   {friendElements}
+   // {friendElements}
+      test
   )
 }
 

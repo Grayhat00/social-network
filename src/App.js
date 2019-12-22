@@ -9,13 +9,12 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import Friends from './components/Navbar/Friends/Friends';
 import { BrowserRouter, Route } from 'react-router-dom';
-// import {rerenderEntireThree} from "./render";
-import {updateNewPostText} from "./redux/state";
+import {updateNewPostText} from "./redux/store";
 
 // let SomeComponent = () => <Dialogs />
 function App(props) {
+    // debugger;
   return (
-
       <div className="app-wrapper">
         <Header />
         <Navbar state={props.state.sidebar}/>
