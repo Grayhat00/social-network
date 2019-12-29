@@ -17,7 +17,6 @@ const Message = (props) => {
         <div className={s.message}>{props.message}</div>
     )
 }
-
     const Dialogs = (props) => {
 
     let state = props.dialogsPage;
@@ -31,7 +30,7 @@ const Message = (props) => {
     }
     let onMessageChange = (e) => {
         let body = e.target.value;
-        props.updateNewMessageBodyCreator(body)
+        props.updateNewMessageBody(body)
     }
     return (
 
