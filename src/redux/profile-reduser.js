@@ -31,7 +31,6 @@ const profileReduser = (state = initialState, action) => {
                 posts: [...state.posts, newPost],
                 newPostText: ''
             };
-
         }
         case UPDATE_NEW_POST_TEXT: {
             return {
