@@ -34,7 +34,9 @@ const Navbar = (props) => {
       <div className={s.item}>
         <NavLink to="/settings">Settings</NavLink>
       </div>
-
+        <div className={s.item}>
+            <NavLink to="/users">Users</NavLink>
+        </div>
       {/*<div className={s.Friends}>*/}
       {/*  <NavLink className= {s.FriendsItem} to="/friendsItem"> {friendElements} </NavLink>*/}
       {/*</div>*/}
