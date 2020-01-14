@@ -8,7 +8,7 @@ import Post from "../MyPosts/Post/Post";
 
 const ProfileInfo = (props) => {
 
-    if (!props.profile.photos) {
+    if (!props.profile.lookingForAJob) {
         return <Preloader />
     }
 
@@ -24,7 +24,7 @@ const ProfileInfo = (props) => {
               <p>{props.profile.aboutMe}</p>
           </div>
 
-          <img src={props.profile.lookingForAJob != true ? {NotLook} :  {LookJob}} />
+          {/*<img src={props.profile.lookingForAJob != true ? {NotLook} :  {LookJob}} />*/}
 
       </div>
     </div>
