@@ -36,7 +36,6 @@ class UsersContainer extends React.Component {
     }
 
     render() {
-       
         return <>
             { this.props.isFetching ? <Preloader /> : null }
             <Users totalUsersCount={this.props.totalUsersCount}
@@ -47,7 +46,7 @@ class UsersContainer extends React.Component {
                    follow={this.props.follow}
                    unfollow={this.props.unfollow}
                    isFetching={this.props.isFetching}
-                   {/* toggleFollowingProgress={this.props.toggleFollowingProgress} */}
+                   toggleFollowingProgress={this.props.toggleFollowingProgress}
                    followingInProgress = {this.props.followingInProgress}
             />
         </>
@@ -61,7 +60,7 @@ let mapStateToProps = (state) => {
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
-        toggleFollowingProgress: state.usersPage.followingInProgress
+        followingInProgress: state.usersPage.followingInProgress
     }
 }
 
@@ -90,6 +89,5 @@ let mapStateToProps = (state) => {
 // }
 
 export default connect(mapStateToProps,
-    { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching, toggleFollowingProgress})
-(UsersContainer);
+    { follow, unfollow, setUsers, setCurrentPage, setTotalUsersCount, toggleIsFetching, toggleFollowingProgress})(UsersContainer);
 
