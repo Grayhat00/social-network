@@ -4,8 +4,6 @@ import Post from './Post/Post';
 
 
 const MyPosts = (props) => {
-
-  // let state = props.profilePage;
  
   let postElements = props.posts.map (p => <Post message= {p.message} likeCount = {p.likeCount} />);
 

@@ -17,12 +17,18 @@ export const UsersAPI = {
             return response.data
         });
     },
-    // getUsersAction (userID) {
-    //     return instance.delete(`follow/${userID}`)
-    //     .then(response => {
-    //         return response.data
-    //     });
-    // }  
+    follow (userId) {
+        return instance.post(`follow/${userId}`)
+    },
+    unfollow (userId) {
+        return instance.delete(`follow/${userId}`)
+    },
+    logIn () {
+        return instance.get(`auth/me?`)
+    },
+    getUserProfile (userId) {
+        return instance.get(`profile/` + userId)
+    }
 }
 
 export default UsersAPI;

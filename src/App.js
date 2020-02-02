@@ -13,7 +13,6 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 // let SomeComponent = () => <Dialogs />
 function App(props) {
   return (
-
       <div className="app-wrapper">
         <HeaderContainer />
         <Navbar />
