@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import {
    sendMessageCreator, updateNewMessageBodyCreator,
 } from "../../redux/dialogs-reduser";
+import { Redirect } from 'react-router-dom';
+
 
 const DialogItem = (props) => {
     let path = "/dialogs/" + props.id;
@@ -32,6 +34,9 @@ const Message = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body)
     }
+
+    if (!props.isAuth) return <Redirect to = {"/login"} />;
+
     return (
 
         <div className={s.dialogs}>

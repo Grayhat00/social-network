@@ -4,10 +4,12 @@ import {
 } from "../../redux/dialogs-reduser";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
+import { Redirect } from 'react-router-dom';
 
 let mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage
+        dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth
     }
 }
 let mapDispatchToProps = (dispatch) => {
