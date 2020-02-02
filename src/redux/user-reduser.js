@@ -1,4 +1,4 @@
-import UsersAPI from "../components/api/api";
+import {UsersAPI} from "../components/api/api";
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';

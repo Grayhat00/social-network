@@ -1,4 +1,4 @@
-import UsersAPI from "../components/api/api"
+import {UsersAPI} from "../components/api/api"
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
@@ -59,15 +59,14 @@ const profileReduser = (state = initialState, action) => {
 export const addPost = () =>  ({type: ADD_POST})
 export const updateNewPostText = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text})
-export const setUserProfileSuccess = (profile) =>
+export const setUserProfile = (profile) =>
     ({type: SET_USER_PROFILE, profile})
 
-export const setUserProfile = (userId) => {
-    return (dispatch) => {
-        UsersAPI.getUserProfile(userId)
+export const getUserProfile = (userId) => (dispatch) => {
+        UsersAPI.getProfile(userId)
         .then(response => {
-            dispatch(setUserProfileSuccess(response.data));
+            dispatch(setUserProfile(response.data));
         });
     }
-}
+
 export default profileReduser;
