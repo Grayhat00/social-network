@@ -7,11 +7,9 @@ import {
     toggleFollowingProgress,
     getUsers
 } from "../../redux/user-reduser";
-import * as axios from 'axios';
 import Users from "./Users";
 import Preloader from "../Common/Preloader/Preloader";
-import UsersAPI from "../api/api";
-
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -58,6 +56,7 @@ let mapStateToProps = (state) => {
     }
 }
 
+
 // let mapDispatchToProps = (dispatch) => {
 //     return {
 //         follow: (userId) => {
@@ -82,6 +81,6 @@ let mapStateToProps = (state) => {
 //     }
 // }
 
-export default connect(mapStateToProps,
-    { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers})(UsersContainer);
+export default withAuthRedirect (connect(mapStateToProps,
+    { follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers})(UsersContainer));
 
