@@ -1,8 +1,9 @@
-import {UsersAPI} from "../components/api/api"
+import {ProfileAPI, UsersAPI} from "../components/api/api"
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_USER_STATUS = 'SET_USER_STATUS';
 
 
 // let sum = (a, b = 1) => {
@@ -20,7 +21,8 @@ let initialState =  {
         {id: '6', message: 'Valera', likeCount: 88}
     ],
     newPostText: 'it-kamasutra.com',
-    profile: []
+    profile: [],
+    status: ""
 };
 const profileReduser = (state = initialState, action) => {
     switch (action.type ) {
@@ -50,6 +52,14 @@ const profileReduser = (state = initialState, action) => {
             };
 
         }
+        case SET_USER_STATUS: {
+            return {
+                ...state,
+                status: action.status,
+            };
+
+        }
+
         default:
             return state;
         }
@@ -61,6 +71,9 @@ export const updateNewPostText = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text})
 export const setUserProfile = (profile) =>
     ({type: SET_USER_PROFILE, profile})
+export const setUserStatus = (status) =>
+    ({type: SET_USER_STATUS, status})
+
 
 export const getUserProfile = (userId) => (dispatch) => {
         UsersAPI.getProfile(userId)
@@ -68,5 +81,21 @@ export const getUserProfile = (userId) => (dispatch) => {
             dispatch(setUserProfile(response.data));
         });
     }
+
+export const getUserStatus = (userId) => (dispatch) => {
+    ProfileAPI.getStatus(userId)
+        .then(response => {
+            dispatch(setUserStatus(response.data));
+        });
+}
+
+export const updateStatus = (status) => (dispatch) => {
+    ProfileAPI.updateStatus(status)
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setUserStatus(status));
+            }
+        });
+}
 
 export default profileReduser;

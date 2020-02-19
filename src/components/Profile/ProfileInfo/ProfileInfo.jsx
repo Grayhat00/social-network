@@ -4,6 +4,7 @@ import Preloader from "../../Common/Preloader/Preloader";
 import LookJob from "../../../assets/images/lookingJob.png";
 import NotLook from "../../../assets/images/sayNo.jpg";
 import Post from "../MyPosts/Post/Post";
+import ProfileStatus from "./ProfileStatus"
 
 
 const ProfileInfo = (props) => {
@@ -23,9 +24,7 @@ const ProfileInfo = (props) => {
               <h5>{props.profile.fullName}</h5>
               <p>{props.profile.aboutMe}</p>
           </div>
-
-          {/*<img src={props.profile.lookingForAJob != true ? {NotLook} :  {LookJob}} />*/}
-
+            <ProfileStatus status={props.status}/>
       </div>
     </div>
   )
