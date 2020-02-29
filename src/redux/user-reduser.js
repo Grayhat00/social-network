@@ -20,7 +20,7 @@ let initialState =  {
     totalUsersCount: [],
     currentPage: 1,
     isFetching: false,
-    followingInProgress: [5827]
+    followingInProgress: []
 };
 const usersReduser = (state = initialState, action) => {
     let followUser = {

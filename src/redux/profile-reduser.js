@@ -50,7 +50,6 @@ const profileReduser = (state = initialState, action) => {
                 ...state,
                 profile: action.profile,
             };
-
         }
         case SET_USER_STATUS: {
             return {
