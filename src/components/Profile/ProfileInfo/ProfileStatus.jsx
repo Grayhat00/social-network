@@ -30,7 +30,7 @@ class ProfileStatus extends React.Component {
                     status: this.props.status
                 });
         }
-        console.log('componentDidUpdate');
+        // console.log('componentDidUpdate');
     }
 
 
