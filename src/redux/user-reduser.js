@@ -15,12 +15,12 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
  For state should use parameter by default*/
 
 let initialState =  {
-    users: [ ],
+    users: [],
     pageSize: 6,
     totalUsersCount: [],
     currentPage: 1,
     isFetching: false,
-    followingInProgress: [5827]
+    followingInProgress: []
 };
 const usersReduser = (state = initialState, action) => {
     let followUser = {

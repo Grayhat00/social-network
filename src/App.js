@@ -9,9 +9,8 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import LoginPage from './components/Login/Login';
+import Login from './components/Login/Login';
 
-// let SomeComponent = () => <Dialogs />
 function App(props) {
   return (
       <div className="app-wrapper">
@@ -28,7 +27,7 @@ function App(props) {
             <Route path='/users'
                      render= { () => <UsersContainer />} />
             <Route path='/login'
-                     render= { () => <LoginPage />} />
+                     render= { () => <Login />} />
           </div>
       </div>
   );
