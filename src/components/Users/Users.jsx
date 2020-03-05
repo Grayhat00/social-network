@@ -7,7 +7,6 @@ import UsersAPI from "../api/api"
 
 
 let Users = (props) => {
-
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
 
     let pages = [];

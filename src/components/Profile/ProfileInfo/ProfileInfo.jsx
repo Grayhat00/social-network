@@ -8,8 +8,7 @@ import ProfileStatus from "./ProfileStatus"
 
 
 const ProfileInfo = (props) => {
-
-    if (!props.profile.lookingForAJob) {
+    if (!props.profile) {
         return <Preloader />
     }
 
@@ -19,10 +18,10 @@ const ProfileInfo = (props) => {
       {/*  <img className={s.profImg} src='https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350' />*/}
       {/*</div>*/}
       <div className={s.descriptionBlock}>
-              <img src={props.profile.photos.small} alt=""/>
+              <img src={props.profile.photos.large} alt=""/>
               <h5>{props.profile.fullName}</h5>
               <p>{props.profile.aboutMe}</p>
-                <ProfileStatus status={"Hello my friends"}/>
+              <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
       </div>
     </div>
   )
