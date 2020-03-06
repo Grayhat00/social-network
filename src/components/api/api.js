@@ -45,7 +45,9 @@ export const AuthAPI = {
     logIn () {
         return instance.get(`auth/me?`);
     },
+    Auth(formData) {
+        return instance.post('auth/login/', {formData});
+    }
 }
 
-// export default UsersAPI;
 

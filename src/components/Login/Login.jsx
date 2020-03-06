@@ -1,5 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
+import {connect} from "react-redux";
+import {toLogin} from "../../redux/auth-reduser";
 
 const LoginForm = (props) => {
     return (
@@ -17,8 +19,8 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
 const Login = (props) => {
-    const onSubmit = (fromData) => {
-        console.log(fromData);
+    const onSubmit = (formData) => {
+        props.toLogin(formData);
     }
     return <div>
         <h1>Login</h1>
@@ -26,4 +28,4 @@ const Login = (props) => {
     </div>
 }
 
-export default Login;
+export default connect(null, {toLogin})(Login);
