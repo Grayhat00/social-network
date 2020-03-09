@@ -33,6 +33,8 @@ export const setAuth = () => (dispatch) => {
                 dispatch(setAuthUserData(id, email, login, true));
             }
         });
+
+        return "Yo yo";
 }
 
 export const toLogin = (email, password, rememberMe) => (dispatch) => {

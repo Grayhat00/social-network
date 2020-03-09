@@ -6,9 +6,7 @@ import {Logout, setAuth} from "../../redux/auth-reduser";
 
 
 class HeaderContainer extends React.Component{
-    componentDidMount() {
-        this.props.setAuth()
-    }
+
     render() {
         return   <Header {...this.props} auth = {this.props.auth} logout={this.props.Logout}/>
     }
@@ -21,4 +19,4 @@ class HeaderContainer extends React.Component{
         }
     }
 
-export default connect(mapStateToProps, {setAuth, Logout} ) (HeaderContainer);
+export default connect(mapStateToProps, {Logout} ) (HeaderContainer);
