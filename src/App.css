@@ -1,21 +1,26 @@
+body {
+    font-family: -apple-system-body;
+}
 .app-wrapper {
-  /* margin: 0 auto; */
   display: grid;
-  width: 1500px;
-  grid-template-areas:
-  "h h"
-  "n c";
+  width: 100%;
+  /*grid-template-areas:*/
+  /*"h h h h"*/
+  /*". c . .";*/
 
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  
+  grid-template-rows: 47px 1fr;
+  grid-template-columns: minmax(120px, 1fr) 10fr minmax(120px, 1fr);
+    /*grid-template-columns: repeat(2, 1fr);*/
 }
 
 .app-wrapper-content {
-    grid-area: c;
+    grid-column: 2/3;
+    grid-row: 2/3;
     background-color: #f8f9fa;
 
 }
-
+a {
+    text-decoration: none;
+}
 
 

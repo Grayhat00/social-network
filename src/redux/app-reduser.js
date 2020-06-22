@@ -13,25 +13,22 @@ const appReduser = (state = initialState, action) => {
         case INITIALIZED_SUCCESS:
             return {
                 ...state,
-                initialized: true
+                initialized: false
             }
         default:
             return state;
     }
 }
 
-export const initializedSuccess = () => ({type: INITIALIZED_SUCCESS })
+export const initializedSuccess = () => ({type: INITIALIZED_SUCCESS})
 
 export const initializeApp  = () => (dispatch) => {
     let promise = dispatch(setAuth());
-    debugger
-    promise.then(() => {
+    Promise.all([promise])
+        .then(() => {
         dispatch(initializedSuccess());
     });
 }
-
-
-
 
 
 export default appReduser;

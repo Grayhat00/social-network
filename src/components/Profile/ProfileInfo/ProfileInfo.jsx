@@ -1,10 +1,8 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
-import LookJob from "../../../assets/images/lookingJob.png";
-import NotLook from "../../../assets/images/sayNo.jpg";
-import Post from "../MyPosts/Post/Post";
 import ProfileStatus from "./ProfileStatus"
+import userPhoto from "../../../assets/images/user.jpg";
 
 
 const ProfileInfo = (props) => {
@@ -18,7 +16,8 @@ const ProfileInfo = (props) => {
       {/*  <img className={s.profImg} src='https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350' />*/}
       {/*</div>*/}
       <div className={s.descriptionBlock}>
-              <img src={props.profile.photos.large} alt=""/>
+              <img src={props.profile.photos.large || userPhoto} className={s.mainPhoto} alt=""/>
+          {props.isOwner && <input type="file"/>}
               <h5>{props.profile.fullName}</h5>
               <p>{props.profile.aboutMe}</p>
               <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>

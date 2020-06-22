@@ -1,20 +1,71 @@
 .header {
-  grid-area: h;
-  background-color: #343a40;
+    /*grid-area: h;*/
+    grid-column: 1/4;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #0050B3;
 }
-
-.header img {
-  width: 30px;
-}
-
-/*.loginBlock{*/
-/*  float: right;*/
-/*}*/
 
 .loginBlock a {
- color: white;
+    color: white;
 }
 
 .login {
-  color: #fff;
+    color: #fff;
+}
+
+.user_info {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+    padding-left: 8px;
+}
+
+.navbar {
+    padding: 8px 0 8px 0;
+}
+
+.nav_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav_link {
+    display: inline-block;
+    position: relative;
+    padding: 0 12px;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+}
+.nav_link::before {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 100%;
+    border-left: 1px solid #003A8C;
+    left: 0;
+    bottom: 0;
+}
+.secondaryPhoto {
+    vertical-align: middle;
+}
+.notice {
+    width: 24px;
+    height: 24px;
+    padding-right: 12px;
+}
+.notice:first-child {
+    padding-left: 12px;
+}
+.notice:hover {
+    color: #fff;
 }

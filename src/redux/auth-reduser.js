@@ -12,7 +12,7 @@ let initialState =  {
 
 const authReduser = (state = initialState, action) => {
     switch (action.type ) {
-        case 'SET_USERS_DATA':
+        case SET_USERS_DATA:
             return {
                 ...state,
                 ...action.payload,
@@ -34,7 +34,7 @@ export const setAuth = () => (dispatch) => {
             }
         });
 
-        return "Yo yo";
+//         return "Yo yo";
 }
 
 export const toLogin = (email, password, rememberMe) => (dispatch) => {
